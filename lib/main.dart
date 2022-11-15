@@ -1,65 +1,56 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({
-    Key? key,
-  }) : super(key: key);
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo App'),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<MyHomePage> createState() {
-    return _MyHomePageState();
+  State<HomePage> createState() {
+    return _HomePageState();
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            'You have pushed the button this many times:',
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const Text('Olá mundo!'),
+          const Text('Aprendendo Flutter!'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text('Texto 1 na Row'),
+              Text('Texto 2 na Row'),
+            ],
           ),
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headline4,
+          Container(
+            alignment: Alignment.center,
+            color: Colors.green,
+            child: const Text(
+              'Texto 3 no Container',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add_outlined),
       ),
     );
   }
