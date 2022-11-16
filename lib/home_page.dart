@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_container.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -25,15 +27,9 @@ class _HomePageState extends State<HomePage> {
               Text('Texto 2 na Row'),
             ],
           ),
-          Container(
-            alignment: Alignment.center,
-            color: Colors.green,
-            child: const Text(
-              'Texto 3 no Container',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
+          const CustomContainer(
+            text: 'Text Mutável',
+            backgroundColor: Colors.red,
           ),
         ],
       ),
