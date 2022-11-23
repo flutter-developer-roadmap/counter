@@ -12,10 +12,13 @@ class CustomIcons extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Icon(
-      icon,
-      color: color,
-      size: 40.0,
+    return Container(
+      padding: const EdgeInsets.all(10.0),
+      child: Icon(
+        icon,
+        color: color,
+        size: 40.0,
+      ),
     );
   }
 }

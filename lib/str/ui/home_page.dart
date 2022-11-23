@@ -48,7 +48,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             CustomButton(
-              padding: const EdgeInsets.all(8.0),
               icon: Icons.cabin,
               color: Colors.amber,
               label: 'Casa do Kaio',
