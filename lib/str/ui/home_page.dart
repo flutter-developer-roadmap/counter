@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pink,
-          title: const Text('Flutter Layout com algumas mudanças'),
+          title: const Text('Flutter Layout Demo com algumas mudanças'),
         ),
         body: ListView(
           children: [
