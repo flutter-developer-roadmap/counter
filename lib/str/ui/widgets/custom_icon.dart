@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomIcons extends StatelessWidget {
-  final IconData? icon;
+class CustomIcon extends StatelessWidget {
+  final IconData icon;
   final Color? color;
   final double? size;
-  const CustomIcons({
+  const CustomIcon({
     super.key,
-    this.icon,
+    required this.icon,
     this.color,
     this.size,
   });
@@ -16,8 +16,8 @@ class CustomIcons extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Icon(
         icon,
-        color: color,
-        size: 40.0,
+        color: color ?? Colors.grey,
+        size: size ?? 40.0,
       ),
     );
   }

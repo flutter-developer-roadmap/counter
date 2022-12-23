@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  final IconData? icon;
+  final IconData icon;
   final Color? color;
-  final String? label;
+  final String label;
   final VoidCallback? action;
   const CustomButton({
     super.key,
-    this.icon,
+    required this.icon,
     this.color,
-    this.label,
+    required this.label,
     this.action,
   });
   @override
@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
         onPressed: action,
         icon: Icon(icon),
         tooltip: label,
-        splashColor: color,
+        splashColor: color ?? Colors.grey,
         padding: const EdgeInsets.all(5.0),
       ),
     );

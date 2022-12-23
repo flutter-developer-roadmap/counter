@@ -1,4 +1,3 @@
-export 'button_section.dart';
+export 'custom_button.dart';
 export 'title_section.dart';
-export 'text_section.dart';
-export 'icons_section.dart';
+export 'custom_icon.dart';
