@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ValueNotifier<int> counterNotifier = ValueNotifier(0);
+  final ValueNotifier<Color> flagcolorNotifier = ValueNotifier(Colors.white);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,17 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          ValueListenableBuilder(
+            valueListenable: flagcolorNotifier,
+            builder: (context, state, child) {
+              return Container(
+                margin: const EdgeInsets.all(10.0),
+                color: state,
+                width: 100.0,
+                height: 70.0,
+              );
+            },
+          ),
           Align(
             child: ValueListenableBuilder(
               valueListenable: counterNotifier,
@@ -39,6 +51,11 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           counterNotifier.value = counterNotifier.value + 1;
+          if (counterNotifier.value % 3 == 0) {
+            flagcolorNotifier.value = Colors.red;
+          } else {
+            flagcolorNotifier.value = Colors.green;
+          }
 
           log(counterNotifier.value.toString());
         },
